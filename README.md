@@ -2,7 +2,7 @@
 
 This is a [Socket.IO](https://socket.io/) and [Engine.IO](https://socket.io/docs/v4/engine-io-protocol/) client addon for [Godot](https://godotengine.org/) written in [GDScript](https://gdscript.com/) that supports both HTTP long-polling and Websocket.
 
-> This is still a work in progress and is not yet fully featured. Please make sure to check out the [#features](#features) section before using it. The current implementation is functional and works, but there are some known cases that have not been implemented or covered yet (like binary messages)
+> This is still a work in progress and is not yet fully featured. Please make sure to check out the [#features](#features) section before using it.
 
 ## Compatibility
 
@@ -47,13 +47,13 @@ func _on_event_received(event: String, data: Variant, ns: String) -> void:
 | namespaces            | ✔️              | Multiplexing
 | custom path            | ✔️              | 
 | auth            | ✔️              | 
-| automatic reconnection            | ❌              | reconnection attempts, delay, factor
+| automatic reconnection            | ✔️              | reconnection attempts, delay, factor
 | connection timeout            | ❌              | if the client does not receive a ping packet within pingInterval + pingTimeout, then it SHOULD consider that the connection is closed ([link](https://github.com/socketio/socket.io/blob/main/docs/engine.io-protocol/v4-current.md#heartbeat))
 | query            | ❌              | additional query parameters that are sent when connecting a namespace `socket.handshake.query`
 | extra headers            | ❌              |
-| emit with acknowledgement            | ❌              | [acknowledgement](https://github.com/socketio/socket.io/blob/main/docs/socket.io-protocol/v5-current.md#acknowledgement-1)
+| emit with acknowledgement            | ✔️              | [acknowledgement](https://github.com/socketio/socket.io/blob/main/docs/socket.io-protocol/v5-current.md#acknowledgement-1)
 | Websocket only            | ❌              | connect to Websocket only (disable polling)
-| binary messages            | ❌              | 
+| binary messages            | ✔️              |
 | noop packet            | ❌              |
 | error handling for HTTP requests            | ❌              | inside `request.gd`
 | custom serializer            | ❌              | [Custom parser](https://socket.io/docs/v4/custom-parser/)
